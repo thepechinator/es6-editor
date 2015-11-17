@@ -18,5 +18,24 @@
   "bugs": {
     "url": "https://github.com/thepechinator/es6-editor/issues"
   },
-  "homepage": "https://github.com/thepechinator/es6-editor#readme"
+  "homepage": "https://github.com/thepechinator/es6-editor#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel": "^6.1.18",
+    "babel-core": "^6.1.21",
+    "babel-loader": "^6.2.0",
+    "babel-polyfill": "^6.1.19",
+    "codemirror": "^5.8.0",
+    "css-loader": "^0.23.0",
+    "exports-loader": "^0.6.2",
+    "expose-loader": "^0.7.1",
+    "imports-loader": "^0.6.5",
+    "node-sass": "^3.4.2",
+    "nunjucks": "^2.1.0",
+    "nunjucks-loader": "^2.2.1",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.6",
+    "webpack-dev-server": "^1.12.1"
+  }
 }

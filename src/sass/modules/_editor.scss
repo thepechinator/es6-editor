@@ -1,0 +1,31 @@
+// overrides
+.CodeMirror {
+  height: 100%;
+}
+
+.cm-s-vibrant-ink.CodeMirror {
+  border-radius: 0 0 5px 5px;
+}
+
+.cm-s-seti.CodeMirror {
+  border-radius: 0 0 5px 5px;
+}
+
+.cm-s-seti span.cm-comment {
+  color: #808080;
+}
+
+.editor {
+  height: 400px;
+
+  &.is-full {
+    background-color: #415991;
+    // background-color: #28417A;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 100000;
+  }
+}

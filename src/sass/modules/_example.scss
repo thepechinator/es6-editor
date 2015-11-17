@@ -1,0 +1,24 @@
+// example styles
+
+.example-output {
+  background: #151718;
+  border-radius: 0 5px 5px 5px;
+  border: 1px solid #eee;
+  color: #CFD2D1;
+  min-height: 290px;
+  height: 100%;
+  overflow: auto;
+  padding: 0.5rem;
+}
+
+.example-console {
+  background: #151718;
+  border: 1px solid #ddd;
+  border-radius: 0 5px 5px 5px;
+  color: #CFD2D1;
+  min-height: 50px;
+  height: 100%;
+  overflow: auto;
+  padding: 0.5rem;
+  white-space: pre;
+}

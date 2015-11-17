@@ -1,0 +1,62 @@
+@import "shapes";
+@import "settings";
+@import "foundation";
+@import "base";
+
+@import "modules/typography";
+@import "modules/example";
+@import "modules/block";
+@import "modules/editor";
+@import "modules/tabs";
+
+.deck-status {
+  bottom: 0;
+  color: #fff;
+  position: fixed;
+  text-align: right;
+  z-index: -1;
+}
+
+// .deck-status-current {
+//
+// }
+
+// Otherwise, our transitions won't work like how we expect them to.
+.slide.deck-child-current {
+  position: relative;
+  left: auto;
+  top: auto;
+}
+
+.flex-vert {
+  padding: 20px;
+  background: #eee;
+
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+
+  align-items: center;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.intro {
+  background: #eee;
+  position: absolute;
+  top: 0;
+  bottom:0;
+  right:0;
+  left: 0;
+  text-align: center;
+}
+
+.intro-content {
+
+}
