@@ -1,11 +1,15 @@
+/* jshint evil: true */
+
 /**
 * Code inspired and taken from https://babeljs.io/scripts/repl.js.
 */
+// import 'script!babel-polyfill/dist/polyfill';
+// import babel from 'script!babel-core/browser';
 
-import $ from 'jquery';
+// import $ from 'jquery';
 import _ from 'underscore';
 
-import 'codemirror/lib/codemirror';
+import CodeMirror from 'codemirror/lib/codemirror';
 import 'codemirror/addon/comment/comment';
 import 'codemirror/keymap/sublime';
 
@@ -179,11 +183,11 @@ export default class BabelREPL {
     try {
       // So this is actually running the code we obtained
       // and setting the console used as the capturingConsole
-      // we created. It's kind of cool because it gives us control
+      // we created. It's cool because it gives us control
       // over what to replace in our block of our code.
-      new Function('console', '$$', code)(capturingConsole, this.$output);
+      // (function(console, $$, code) {}(capturingConsole, this.$output));
+      new Function('console', '$$', 'require', code)(capturingConsole, this.$output, this.myRequire);
     } catch (err) {
-      //console.log('THERE IS A PROBLEM!!', code);
       error = err;
       buffer.push(err.message);
     }
@@ -194,5 +198,16 @@ export default class BabelREPL {
     if (error) {
       throw error;
     }
+  }
+
+  myRequire(id) {
+    return {
+      a: function() {
+        return 'i am a';
+      },
+      b: function() {
+        return 'i am beaver';
+      }
+    };
   }
 }

@@ -1,6 +1,9 @@
-@import "shapes";
 @import "settings";
 @import "foundation";
+@import "~codemirror/lib/codemirror";
+@import "~codemirror/theme/vibrant-ink";
+@import "~codemirror/theme/seti";
+
 @import "base";
 
 @import "modules/typography";
@@ -8,25 +11,6 @@
 @import "modules/block";
 @import "modules/editor";
 @import "modules/tabs";
-
-.deck-status {
-  bottom: 0;
-  color: #fff;
-  position: fixed;
-  text-align: right;
-  z-index: -1;
-}
-
-// .deck-status-current {
-//
-// }
-
-// Otherwise, our transitions won't work like how we expect them to.
-.slide.deck-child-current {
-  position: relative;
-  left: auto;
-  top: auto;
-}
 
 .flex-vert {
   padding: 20px;
@@ -45,18 +29,4 @@
 
 .full-height {
   height: 100%;
-}
-
-.intro {
-  background: #eee;
-  position: absolute;
-  top: 0;
-  bottom:0;
-  right:0;
-  left: 0;
-  text-align: center;
-}
-
-.intro-content {
-
 }

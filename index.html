@@ -3,18 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <title>ES6</title>
-  <!-- <link rel="stylesheet" href="bower_components/deckjs/themes/transition/horizontal-slide.css"> -->
+  <link rel="stylesheet" href="lib/es6-editor.css">
 </head>
 <body class="block-full-height">
+
   <div class="js-stage">
+    <!-- Example of the editor -->
+    <div class="row block-normal editor js-example">
+
+      <div class="column small-8 block-full-height">
+        <a href="javascript: void(0)" class="button tiny block-flush js-toggle-fs" style="float: right; font-size: 15px;">Full Screen</a>
+
+        <ul class="tabs" data-tab>
+          <li class="tab-title active"><a href="#panel-1">Live ES6 Editor</a></li>
+          <li class="tab-title"><a href="#panel-2">Compiled JS</a></li>
+        </ul>
+
+        <div class="tabs-content block-partial-height ">
+          <div class="content active" id="panel-1">
+
+<!-- This has to remain fixed to the left in the editor. -->
+<textarea class="js-demo-text" style="display: none;">let hello='world';</textarea>
+
+          </div>
+          <div class="content" id="panel-2">
+
+<!-- This has to remain fixed to the left in the editor. -->
+<textarea class="js-demo-compiled" style="display: none;">
+compiled JS</textarea>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="column small-4 block-full-height">
+        <ul class="tabs" data-tab>
+          <li class="tab-title active"><a href="#output-1">Console</a></li>
+          <li class="tab-title"><a href="#output-2">HTML Output</a></li>
+        </ul>
+
+        <div class="tabs-content block-partial-height ">
+          <div class="content active" id="output-1">
+            <div class="example-console js-console">
+              The personal console for this example.
+            </div>
+          </div>
+          <div class="content" id="output-2">
+            <div class="example-output js-output">
+              This is where HTML output will appear.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <script src="node_modules/babel-polyfill/dist/polyfill.min.js"></script>
   <script src="node_modules/babel-core/browser.min.js"></script>
 
-  <script src="js/vendors.js"></script>
-  <!-- <script src="node_modules/codemirror/lib/codemirror.js"></script>
-  <script src="node_modules/codemirror/keymap/sublime.js"></script> -->
-  <script src="js/main.js"></script>
+  <script src="lib/vendors.js"></script>
+  <script src="lib/es6-editor.js"></script>
 </body>
 </html>

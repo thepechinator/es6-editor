@@ -1,0 +1,21 @@
+{
+  "esnext": true,
+
+  "undef": true,
+  "unused": "vars",
+  "latedef": true,
+  "bitwise": true,
+  "curly": true,
+  "eqeqeq": true,
+
+  "browser": true,
+  "node": true,
+  "jquery": true,
+  "mocha": true,
+
+  "sub": true,
+
+  "globals": {
+
+  }
+}
