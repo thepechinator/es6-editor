@@ -3,15 +3,20 @@
 /**
 * Code inspired and taken from https://babeljs.io/scripts/repl.js.
 */
-// import 'script!babel-polyfill/dist/polyfill';
-// import babel from 'script!babel-core/browser';
 
-// import $ from 'jquery';
-import _ from 'underscore';
+// if (!window._babelPolyfill) {
+  require('babel/polyfill');
+// }
+// require('script!babel-core/browser.js');
 
-import CodeMirror from 'codemirror/lib/codemirror';
-import 'codemirror/addon/comment/comment';
-import 'codemirror/keymap/sublime';
+// A library required to get this library working.
+require('underscore');
+
+// More 3rd party libraries, but these are actually required to get this class
+// working.
+var CodeMirror = require('codemirror/lib/codemirror');
+require('codemirror/addon/comment/comment');
+require('codemirror/keymap/sublime');
 
 // babel is provided in an external script tag
 export default class BabelREPL {

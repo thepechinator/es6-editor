@@ -14,17 +14,3 @@
 .cm-s-seti span.cm-comment {
   color: #808080;
 }
-
-.editor {
-  height: 400px;
-
-  &.is-full {
-    background-color: #415991;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    z-index: 100000;
-  }
-}

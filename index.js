@@ -1,1 +1,1 @@
-module.exports = 'something';
+module.exports = require('./lib/es6-editor');

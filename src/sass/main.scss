@@ -1,32 +1,47 @@
+// Vendor Foundation stuff.
 @import "settings";
 @import "foundation";
+
+// Vendor CodeMirror stuff.
 @import "~codemirror/lib/codemirror";
 @import "~codemirror/theme/vibrant-ink";
 @import "~codemirror/theme/seti";
 
+// Base elements. Not necessary to include.
 @import "base";
 
-@import "modules/typography";
-@import "modules/example";
-@import "modules/block";
-@import "modules/editor";
+// Overriding Foundation styles. NOT NEEDED.
 @import "modules/tabs";
 
-.flex-vert {
-  padding: 20px;
-  background: #eee;
+// These are CodeMirror overrides.
+@import "modules/editor";
 
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-
-  align-items: center;
-}
-
+// The block and typography stuff should be retrieved from
+// our codebase-- NOT NEEDED.
+@import "modules/block";
+@import "modules/typography";
+// Probably something we can extract.
 .full-height {
   height: 100%;
+}
+
+
+// The stuff below is styles we may want to keep in some form.
+// Now, this is something specific as part of our editor's styling,
+// but should not be forced on the user (maybe).
+@import "modules/example";
+
+// This is the only specific part of our editor
+.editor {
+  height: 400px;
+
+  &.is-full {
+    background-color: #415991;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 100000;
+  }
 }

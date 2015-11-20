@@ -3,22 +3,24 @@
 // Template from
 // https://github.com/webpack/webpack-with-common-libs/blob/master/webpack.config.js
 
-var PROD = JSON.parse(process.env.PROD || "0");
+var PROD = JSON.parse(process.env.PROD || '0');
 
-var webpack = require("webpack");
+var webpack = require('webpack');
 var path = require('path');
 
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var settings = {
   entry: {
-    'es6-editor': "./src/js/es6-editor.js"
+    'es6-editor': './src/js/es6-editor.js',
+    'test': './src/js/test.js',
+    'vendors': './src/js/vendors.js'
   },
   output: {
-    path: __dirname + "/lib",
-    filename: PROD ? "[name].min.js" : "[name].js",
+    path: __dirname + '/lib',
+    filename: PROD ? '[name].min.js' : '[name].js',
     chunkFilename: '[name].js',
-    publicPath: "http://localhost:8080/lib/"
+    publicPath: 'http://localhost:8080/lib/'
   },
   module: {
     preLoaders: [
@@ -30,11 +32,11 @@ var settings = {
     ],
     loaders: [
       {
-        test: /\.js$/, loader: "babel-loader",
+        test: /\.js$/, loader: 'babel-loader',
         exclude: /node_modules|bower_components/
       },
 
-      // required to write "require('./style.css')"
+      // required to write require('./style.css')
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') },
       { test: /\.scss$/, loader: ExtractTextPlugin.extract('style', 'css!sass') },
 
@@ -102,12 +104,12 @@ var settings = {
   devtool: 'source-map'
 };
 
-// settings.plugins.push(
-//   new webpack.optimize.CommonsChunkPlugin({
-//       // this one only pulls common stuff from vendors and main
-//     name: 'vendors',
-//     chunks: ['main']
-//   })
-// );
+settings.plugins.push(
+  new webpack.optimize.CommonsChunkPlugin({
+      // this one only pulls common stuff from vendors and main
+    name: 'vendors',
+    chunks: ['es6-editor']
+  })
+);
 
 module.exports = settings;
